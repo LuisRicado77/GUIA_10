@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>DATOS DEL USUARIO</title>
+        <meta charset="UTF-8"></meta>
+    </head>
+    <body>
+        <h1>Datos del Usuario</h1>
+        <a th:href="@{/}">REGRESAR</a>
+        <br/>
+        <form th:action="@{/guardar}" method="POST" th:object="${usuario}">
+            <br/>
+            <label for="cedula">CEDULA:</label>
+            <input type="text" name="cedula" th:field="*{cedula}" required/>
+            <br/>
+            <label for="clave">CLAVE:</label>
+            <input type="text" name="clave" th:field="*{clave}" />
+            <br/>
+            <label for="nombre">NOMBRE:</label>
+            <input type="text" name="nombre" th:field="*{nombre}" required/>
+            <br/>
+            <label for="cedula">EMAIL</label>
+            <input type="text" name="email" th:field="*{email}"/>
+            <br/>
+            <input type="reset" value="limpiar" /> &nbsp;&nbsp;&nbsp;
+            <input type="submit" name="guardar" value="GUARDAR"/>
+            
+            
+            
+        </form>
+    </body>
+</html>

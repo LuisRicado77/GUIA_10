@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>GUIA10</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TERMINANDO GUIA 10</div>
+        <p th:text = "${mensaje}"></p>
+        <p th:text = "${dato}"></p>
+        
+        <hr>
+        
+       
+        
+        
+        
+        <h4>LISTA DE PERSONAS</h4>
+        <hr><!-- comment -->
+        <div th:if="${usuarios != null and !usuarios.empty}">
+            <table border = "1">
+                <tr>
+                    <th>CEDULA</th>
+                    <th>NOMBRE</th>
+                    <th>CLAVE</th>
+                    <th>EMAIL</th>
+                    
+                </tr>  
+                
+                <tr th:each=" u: ${usuarios}">
+                    <td th:text = "${u.cedula}"></td>
+                    <td th:text = "${u.clave}"></td>
+                    <td th:text = "${u.nombre}"></td>
+                    <td th:text = "${u.email}"></td>   
+                    
+                </tr>
+            </table> 
+        </div>
+        <div th:if="${usuarios == null or usuarios.empty}">
+            La lista de usuarios esta vacia
+        </div>
+    </body>
+</html>
